@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Registration</title>
+    <link rel="stylesheet" href="vendor-registration.css">
+</head>
+<body>
+    <!-- Vendor Registration Form -->
+    <div class="modal fade" id="vendorRegistrationModal" tabindex="-1" aria-labelledby="vendorRegistrationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="vendorRegistrationModalLabel">Vendor Registration</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="vendorRegistrationForm">
+                        <div class="mb-3">
+                            <label for="vendorName" class="form-label">Vendor Name</label>
+                            <input type="text" class="form-control" id="vendorName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactPerson" class="form-label">Contact Person</label>
+                            <input type="text" class="form-control" id="contactPerson" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="vendorEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="vendorEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="vendorPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="vendorPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="vendorPhone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="vendorPhone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="vendorAddress" class="form-label">Business Address</label>
+                            <input type="text" class="form-control" id="vendorAddress" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="vendorServiceType" class="form-label">Type of Service</label>
+                            <input type="text" class="form-control" id="vendorServiceType" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="vendorWebsite" class="form-label">Website/Social Media Links</label>
+                            <input type="url" class="form-control" id="vendorWebsite" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="vendorExperience" class="form-label">Experience</label>
+                            <textarea class="form-control" id="vendorExperience" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="vendorDocuments" class="form-label">Upload Documents</label>
+                            <input type="file" class="form-control" id="vendorDocuments" accept="image/*, .pdf, .docx" multiple>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="termsConditions" required>
+                            <label class="form-check-label" for="termsConditions">
+                                I agree to the <a href="#">terms and conditions</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="vendor-registration.js"></script>
+</body>
+</html>

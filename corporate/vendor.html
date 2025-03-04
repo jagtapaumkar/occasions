@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Photographers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="vendor.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+    <div class="d-flex justify-content-between align-items-center px-4 py-3 bg-light">
+        <div class="logo">
+            <h1>Occasions</h1>
+        </div>
+        <nav>
+            <ul class="d-flex list-unstyled gap-4 m-0">
+                <li><a href="#" class="text-dark">Services</a></li>
+                <li><a href="#" class="text-dark">Vendors</a></li>
+                <li><a href="#about-us" class="text-dark">About us</a></li>
+                <li><a href="#" class="text-dark">Blog</a></li>
+                <li><a href="#" class="text-dark">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="vendor-section d-flex align-items-center gap-2">
+            <span class="vendor-text">Are you a vendor?</span>
+            <a href="signin.html" class="start-project">Register now</a>
+        </div>
+    </div>
+</header>
+
+<!-- Search and Filters Section -->
+<section class="py-4">
+    <div class="container text-center">
+        <h2 class="fw-bold">80 Wedding Photographers in Pune</h2>
+        <p class="text-muted">Refine your search by selecting a category below.</p>
+        <div class="d-flex justify-content-center gap-3 my-3 flex-wrap">
+            <div class="dropdown">
+                <button class="btn btn-outline-dark dropdown-toggle" type="button" id="sortByDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    Sort by
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="sortByDropdown">
+                    <li><a class="dropdown-item" href="#" data-sort="price">Price</a></li>
+                    <li><a class="dropdown-item" href="#" data-sort="ratings">Ratings</a></li>
+                    <li><a class="dropdown-item" href="#" data-sort="experience">Experience</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-outline-dark dropdown-toggle" type="button" id="startingPriceDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    Starting Price
+                </button>
+                <ul class="dropdown-menu p-3" aria-labelledby="startingPriceDropdown" style="min-width: 300px;">
+                    <li>
+                        <div class="card p-3 shadow-sm">
+                            <h6 class="card-title mb-2">Select Price Range (₹)</h6>
+                            <input type="range" class="form-range" id="priceRange" min="1000" max="100000" step="5000" value="50000">
+                            <div class="d-flex justify-content-between mt-2">
+                                <small>₹1,000</small>
+                                <span id="priceValue" class="fw-bold">₹50,000</span>
+                                <small>₹1,00,000</small>
+                            </div>
+                        </div>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <button class="btn btn-primary w-100 apply-price" type="button">Apply</button>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="dropdown">
+                <button class="btn btn-outline-dark dropdown-toggle" type="button" id="distanceDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    Distance
+                </button>
+                <ul class="dropdown-menu p-3" aria-labelledby="distanceDropdown" style="min-width: 300px;">
+                    <li>
+                        <div class="card p-3 shadow-sm">
+                            <h6 class="card-title mb-2">Select Distance (km)</h6>
+                            <input type="range" class="form-range" id="distanceRange" min="5" max="200" step="5" value="50">
+                            <div class="d-flex justify-content-between mt-2">
+                                <small>5 km</small>
+                                <span id="distanceValue" class="fw-bold">50 km</span>
+                                <small>200 km</small>
+                            </div>
+                        </div>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <button class="btn btn-primary w-100 apply-distance" type="button">Apply</button>
+                    </li>
+                </ul>
+            </div>
+            
+            
+            <div class="dropdown">
+                <button class="btn btn-outline-dark dropdown-toggle" type="button" id="stylesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    Photo & Video Styles
+                </button>
+                <ul class="dropdown-menu p-3" aria-labelledby="stylesDropdown" style="min-width: 250px;">
+                    <li class="list-group">
+                        <div class="form-check list-group-item">
+                            <input class="form-check-input" type="checkbox" value="Traditional Photography" id="styleTraditional">
+                            <label class="form-check-label" for="styleTraditional">
+                                Traditional Photography
+                            </label>
+                        </div>
+                        <div class="form-check list-group-item">
+                            <input class="form-check-input" type="checkbox" value="Candid Photography" id="styleCandid">
+                            <label class="form-check-label" for="styleCandid">
+                                Candid Photography
+                            </label>
+                        </div>
+                        <div class="form-check list-group-item">
+                            <input class="form-check-input" type="checkbox" value="Traditional Videography" id="styleTraditionalVideo">
+                            <label class="form-check-label" for="styleTraditionalVideo">
+                                Traditional Videography
+                            </label>
+                        </div>
+                        <div class="form-check list-group-item">
+                            <input class="form-check-input" type="checkbox" value="Cinematic Videography" id="styleCinematic">
+                            <label class="form-check-label" for="styleCinematic">
+                                Cinematic Videography
+                            </label>
+                        </div>
+                        <div class="form-check list-group-item">
+                            <input class="form-check-input" type="checkbox" value="Pre-Wedding Shoots" id="stylePreWedding">
+                            <label class="form-check-label" for="stylePreWedding">
+                                Pre-Wedding Shoots
+                            </label>
+                        </div>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><button class="btn btn-primary w-100 apply-styles" type="button">Apply</button></li>
+                </ul>
+            </div>
+            
+            
+            <button class="btn btn-outline-dark">Support diversity</button>
+            <button class="btn btn-outline-dark">+ More filters</button>
+        </div>
+        <div class="input-group w-75 mx-auto">
+            <span class="input-group-text">
+                <i class="bi bi-search"></i> <!-- Search icon -->
+            </span>
+            <input type="text" class="form-control" placeholder="Search for photographers">
+            <input type="text" class="form-control" placeholder="Location">
+            <button class="btn btn-primary">Search</button>
+        </div>
+        
+</section>
+
+<section class="container py-5">
+    <div class="filter-bar d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h3 id="location-title">Wedding Photographers</h3>
+            <p id="filter-subtitle">To perfectly match your events photography needs!</p>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+           
+            <select class="form-select form-select-sm px-3 py-2" id="sort-options" aria-label="Sort by" 
+                style="font-size: 0.9rem; max-width: 200px; border-radius: 5px; background-color: #f8f9fa; border-color: #ddd; color: #495057;">
+                <option selected disabled style="color: #6c757d;">Sort by</option>
+                <option value="price">Low to High</option>
+                <option value="ratings">High to Low</option>
+                <option value="experience">Ratings</option>
+            </select>
+
+            
+            <div class="view-options d-flex align-items-center">
+                
+                <span class="list-view d-flex align-items-center" role="button" style="cursor: pointer; color: #666;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16" style="margin-right: 5px;">
+                        <path fill-rule="evenodd" d="M2.5 12.5A.5.5 0 0 1 2 12V11a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-11zm0-4a.5.5 0 0 1-.5-.5V7a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-11zm0-4a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-11z"/>
+                    </svg>
+                    <span style="font-size: 0.9rem;">List</span>
+                </span>
+
+                <span class="grid-view d-flex align-items-center ms-4" role="button" style="cursor: pointer; color: #d74a49; font-weight: bold;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid" viewBox="0 0 16 16" style="margin-right: 5px;">
+                        <path d="M2 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2zm0 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V9zm7-7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zm0 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V9z"/>
+                    </svg>
+                    <span style="font-size: 0.9rem;">Grid</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Location Filters
+    <div class="filters d-flex flex-wrap gap-3">
+        <button class="btn btn-outline-secondary filter-btn" data-location="Jackson, MS">Jackson, MS</button>
+        <button class="btn btn-outline-secondary filter-btn" data-location="Hattiesburg, MS">Hattiesburg, MS</button>
+        <button class="btn btn-outline-secondary filter-btn" data-location="South MS">South MS</button>
+        <button class="btn btn-outline-secondary filter-btn" data-location="Kiln, MS">Kiln, MS</button>
+    </div> -->
+
+ <!-- Cards Section -->
+<div class="container mt-5">
+    <div class="row row-cols-1 row-cols-md-4 g-4" id="vendor-cards">
+      <!-- Card 1 -->
+<div class="col">
+    <div class="card h-100 shadow-sm">
+        <img src="img/IM4.jpg" class="card-img-top" alt="Photographer">
+        <div class="card-body">
+            <h5 class="card-title fw-bold">Riya Photography</h5>
+            <p class="card-text">Based out of Delhi, Riya Photography specializes in capturing memorable wedding moments.</p>
+            <p class="price-range mb-1"><strong>₹33,000-₹44,999</strong></p>
+            <span class="badge bg-warning text-dark">Best of Weddings</span>
+            <p class="ratings mt-2 mb-0">
+                <i class="bi bi-star-fill text-warning"></i> 5 (57)
+            </p>
+            <button class="btn btn-primary w-100 mt-3">Request Quote</button>
+        </div>
+    </div>
+</div>
+<!-- Card 2 -->
+<div class="col">
+    <div class="card h-100 shadow-sm">
+        <img src="img/IM5.jpeg" class="card-img-top" alt="Photographer">
+        <div class="card-body">
+            <h5 class="card-title fw-bold">Aarav Studio</h5>
+            <p class="card-text">Mumbai-based wedding photographer capturing timeless memorable wedding moments moments</p>
+            <p class="price-range mb-1"><strong>₹1,00,000-₹1,99,999</strong></p>
+            <span class="badge bg-warning text-dark">Best of Weddings</span>
+            <p class="ratings mt-2 mb-0">
+                <i class="bi bi-star-fill text-warning"></i> 5 (155)
+            </p>
+            <button class="btn btn-primary w-100 mt-3">Request Quote</button>
+        </div>
+    </div>
+</div>
+<!-- Card 3 -->
+<div class="col">
+    <div class="card h-100 shadow-sm">
+        <img src="img/IM4.jpg" class="card-img-top" alt="Photographer">
+        <div class="card-body">
+            <h5 class="card-title fw-bold">Krishna Clicks</h5>
+            <p class="card-text">Serving South India and nearby regions with vibrant wedding photography memorable wedding moments.</p>
+            <p class="price-range mb-1"><strong>₹75,000-₹1,50,000</strong></p>
+            <span class="badge bg-warning text-dark">Best of Weddings</span>
+            <p class="ratings mt-2 mb-0">
+                <i class="bi bi-star-fill text-warning"></i> 4.5 (5)
+            </p>
+            <button class="btn btn-primary w-100 mt-3">Request Quote</button>
+        </div>
+    </div>
+</div>
+<!-- Card 4 -->
+<div class="col">
+    <div class="card h-100 shadow-sm">
+        <img src="img/IM2.webp" class="card-img-top" alt="Photographer">
+        <div class="card-body">
+            <h5 class="card-title fw-bold">Meera Moments</h5>
+            <p class="card-text">Specializing in candid and portrait wedding photography across India photography memorable wedding moments.</p>
+            <p class="price-range mb-1"><strong>₹50,000-₹1,00,000</strong></p>
+            <span class="badge bg-warning text-dark">Best of Weddings</span>
+            <p class="ratings mt-2 mb-0">
+                <i class="bi bi-star-fill text-warning"></i> 4.9 (87)
+            </p>
+            <button class="btn btn-primary w-100 mt-3">Request Quote</button>
+        </div>
+    </div>
+</div>
+<!-- Card 5 -->
+<div class="col">
+    <div class="card h-100 shadow-sm">
+        <img src="img/IM1.jpg" class="card-img-top" alt="Photographer">
+        <div class="card-body">
+            <h5 class="card-title fw-bold">Ananya Creations</h5>
+            <p class="card-text">Kolkata-based wedding photographers specializing in traditional and candid shots.</p>
+            <p class="price-range mb-1"><strong>₹40,000-₹80,000</strong></p>
+            <span class="badge bg-warning text-dark">Best of Weddings</span>
+            <p class="ratings mt-2 mb-0">
+                <i class="bi bi-star-fill text-warning"></i> 4.8 (45)
+            </p>
+            <button class="btn btn-primary w-100 mt-3">Request Quote</button>
+        </div>
+    </div>
+</div>
+<!-- Card 6 -->
+<div class="col">
+    <div class="card h-100 shadow-sm">
+        <img src="img/IM2.webp" class="card-img-top" alt="Photographer">
+        <div class="card-body">
+            <h5 class="card-title fw-bold">Vivaah Captures</h5>
+            <p class="card-text">Ahmedabad-based team capturing authentic wedding moments with a creative touch.</p>
+            <p class="price-range mb-1"><strong>₹50,000-₹1,00,000</strong></p>
+            <span class="badge bg-warning text-dark">Best of Weddings</span>
+            <p class="ratings mt-2 mb-0">
+                <i class="bi bi-star-fill text-warning"></i> 5 (75)
+            </p>
+            <button class="btn btn-primary w-100 mt-3">Request Quote</button>
+        </div>
+    </div>
+</div>
+<!-- Card 7 -->
+<div class="col">
+    <div class="card h-100 shadow-sm">
+        <img src="img/IM3.jpg" class="card-img-top" alt="Photographer">
+        <div class="card-body">
+            <h5 class="card-title fw-bold">Raj Pixels Studio</h5>
+            <p class="card-text">Jaipur-based photographers with expertise in royal and destination wedding shoots.</p>
+            <p class="price-range mb-1"><strong>₹75,000-₹1,50,000</strong></p>
+            <span class="badge bg-warning text-dark">Best of Weddings</span>
+            <p class="ratings mt-2 mb-0">
+                <i class="bi bi-star-fill text-warning"></i> 4.9 (60)
+            </p>
+            <button class="btn btn-primary w-100 mt-3">Request Quote</button>
+        </div>
+    </div>
+</div>
+<!-- Card 8 -->
+<div class="col">
+    <div class="card h-100 shadow-sm">
+        <img src="img/IM7.jpg" class="card-img-top" alt="Photographer">
+        <div class="card-body">
+            <h5 class="card-title fw-bold">Shivam Snapshots</h5>
+            <p class="card-text">Lucknow-based photographers specializing in cinematic and pre-wedding shoots.</p>
+            <p class="price-range mb-1"><strong>₹60,000-₹1,20,000</strong></p>
+            <span class="badge bg-warning text-dark">Best of Weddings</span>
+            <p class="ratings mt-2 mb-0">
+                <i class="bi bi-star-fill text-warning"></i> 4.7 (50)
+            </p>
+            <button class="btn btn-primary w-100 mt-3">Request Quote</button>
+        </div>
+    </div>
+</div>
+<!-- Card 9 -->
+<div class="col">
+    <div class="card h-100 shadow-sm">
+        <img src="img/IM3.jpg" class="card-img-top" alt="Photographer">
+        <div class="card-body">
+            <h5 class="card-title fw-bold">Divya Dream Frames</h5>
+            <p class="card-text">Chennai-based wedding photographers known for capturing heartfelt candid moments.</p>
+            <p class="price-range mb-1"><strong>₹80,000-₹1,40,000</strong></p>
+            <span class="badge bg-warning text-dark">Best of Weddings</span>
+            <p class="ratings mt-2 mb-0">
+                <i class="bi bi-star-fill text-warning"></i> 5 (88)
+            </p>
+            <button class="btn btn-primary w-100 mt-3">Request Quote</button>
+        </div>
+    </div>
+</div>
+<!-- Card 10 -->
+<div class="col">
+    <div class="card h-100 shadow-sm">
+        <img src="img/IM4.jpg" class="card-img-top" alt="Photographer">
+        <div class="card-body">
+            <h5 class="card-title fw-bold">Aakash Moments</h5>
+            <p class="card-text">Bangalore-based photographers capturing vibrant, creative wedding moments.</p>
+            <p class="price-range mb-1"><strong>₹1,00,000-₹2,00,000</strong></p>
+            <span class="badge bg-warning text-dark">Best of Weddings</span>
+            <p class="ratings mt-2 mb-0">
+                <i class="bi bi-star-fill text-warning"></i> 4.9 (110)
+            </p>
+            <button class="btn btn-primary w-100 mt-3">Request Quote</button>
+        </div>
+    </div>
+</div>
+<!-- <div class="col d-flex justify-content-end align-items-center mt-4">
+    <button class="btn btn-primary">Show More</button>
+</div> -->
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script> -->
+<script src="vendor.js"></script>
+</body>
+</html>

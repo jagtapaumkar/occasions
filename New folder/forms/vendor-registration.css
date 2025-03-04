@@ -1,0 +1,38 @@
+/* Modal Content Styling */
+.modal-content {
+    background-color: #F8F5E9; /* Light background for the form */
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Form Input Fields */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #4A90E2;
+    border-color: #4A90E2;
+    border-radius: 8px;
+    padding: 12px;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #357ABD;
+}
+
+/* Text Links */
+.text-decoration-none {
+    color: #4A90E2;
+}
+
+.text-decoration-none:hover {
+    text-decoration: underline;
+}
